@@ -336,6 +336,11 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/CarrierConfig
 
+PRODUCT_PACKAGES += \
+    SettingsProviderM2012K11AC \
+    SettingsProviderM2012K11AG \
+    SettingsProviderM2012K11AI
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
