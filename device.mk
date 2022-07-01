@@ -55,16 +55,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
-ifeq ($(TARGET_IS_VAB),true)
 VULKAN_DEQP_LEVEL := 2020-03-01
-else
-VULKAN_DEQP_LEVEL := 2019-03-01
-endif
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-$(VULKAN_DEQP_LEVEL).xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # A/B
-ifeq ($(TARGET_IS_VAB),true)
 # Inherit virtual_ab_ota product
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
@@ -96,9 +91,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
-endif
 
 # Audio
+TARGET_ENABLE_AUDIO_ULL := true
+
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
@@ -163,6 +159,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/camera/camera_cnf.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_cnf.txt
+
 # Configstore
 PRODUCT_PACKAGES += \
     disable_configstore
@@ -179,6 +178,10 @@ PRODUCT_COPY_FILES += \
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
+
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Display
 PRODUCT_PACKAGES += \
@@ -227,14 +230,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
-
-ifeq ($(TARGET_HAS_FOD),true)
-PRODUCT_PACKAGES += \
-    libudfpshandler
-
-PRODUCT_PACKAGES += \
-    vendor.goodix.hardware.biometrics.fingerprint@2.1.vendor
-endif
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -422,6 +417,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsensorndkbridge
 
+# Shipping API
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -497,4 +495,4 @@ PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/alioth/alioth-vendor.mk)
