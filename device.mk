@@ -351,7 +351,10 @@ PRODUCT_PACKAGES += \
     SettingsProviderM2012K11AC \
     SettingsProviderM2012K11AG \
     SettingsProviderM2012K11AI \
-    WifiOverlayGourami
+    WifiOverlayGourami \
+    WifiOverlayM2012K11AC \
+    WifiOverlayM2012K11AG \
+    WifiOverlayM2012K11AI
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
