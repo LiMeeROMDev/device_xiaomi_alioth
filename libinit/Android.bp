@@ -11,6 +11,6 @@ cc_library_static {
     include_dirs: [
         "system/core/init",
         "system/libbase/include"
-    ]
-    recovery_available: true,
+    ],
+    recovery_available: true
 }
