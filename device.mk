@@ -490,5 +490,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+# Inherit default workspace for Pixel Launcher
+$(call inherit-product, packages/overlays/DefaultWorkspace/config.mk)
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/alioth/alioth-vendor.mk)
