@@ -339,9 +339,6 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay/packages/apps/Car
 PRODUCT_PACKAGES += \
     ConnectivityOverlayGourami \
     HbmSVManagerGourami \
-    SafetyRegulatoryInfo \
-    SettingsOverlayM2012K11AG \
-    SettingsOverlayM2012K11AI \
     SettingsProviderM2012K11AC \
     SettingsProviderM2012K11AG \
     SettingsProviderM2012K11AI \
