@@ -453,6 +453,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc
 
+# Use FUSE passthrough
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.fuse.passthrough.enable=true
+
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
