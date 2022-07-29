@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="dc_dimming_summary_alioth">"DC dimming is still a experimental feature, only can be opened on supported kernel. It can cause problems including but not limited to the following:
+
+· When the screen brightness is lower than 50%, the dark details are seriously lost.
+· Screen color settings do not work.
+· Extra dim feature does not work.
+· Night light feature does not work.
+· Auto brightness behavior become strange."</string>
+</resources>

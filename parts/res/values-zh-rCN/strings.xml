@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="dc_dimming_summary_alioth">"DC 调光目前仍为实验性功能，仅在支持的内核中可以使用，开启后会造成包括但不限于以下问题：
+
+· 当屏幕亮度小于 50% 时，暗部细节会严重丢失。
+· 屏幕颜色设置不工作。
+· 极暗模式不工作。
+· 护眼模式不工作。
+· 自动亮度的行为会变得比较怪异。"</string>
+</resources>

@@ -23,4 +23,9 @@
         android:title="@string/dc_dimming_enable_title"
         android:summary="@string/dc_dimming_enable_summary" />
 
+    <com.android.settingslib.widget.FooterPreference
+        android:key="footer_preference_display"
+        android:title="@string/dc_dimming_summary_alioth"
+        android:selectable="false" />
+
 </PreferenceScreen>
