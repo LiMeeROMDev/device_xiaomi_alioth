@@ -14,6 +14,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_USES_AOSP_RECOVERY := true
 CUSTOM_BUILD_TYPE := LiMee
+CUSTOM_BUILD_FLAVOR := qssi-user
 
 # Inherit from alioth device
 $(call inherit-product, device/xiaomi/alioth/device.mk)
