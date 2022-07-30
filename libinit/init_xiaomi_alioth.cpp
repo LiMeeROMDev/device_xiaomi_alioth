@@ -92,7 +92,5 @@ void vendor_load_properties() {
         load_poco_f3();
     }
 
-    property_override("ro.build.flavor", "qssi-user");
-
     load_dalvikvm_properties();
 }
