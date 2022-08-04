@@ -497,5 +497,8 @@ PRODUCT_BOOT_JARS += \
 # Inherit default workspace for Pixel Launcher
 $(call inherit-product, packages/overlays/DefaultWorkspace/config.mk)
 
+# Inherit MiPush Framework
+$(call inherit-product, vendor/mipush/mipush.mk)
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/alioth/alioth-vendor.mk)
