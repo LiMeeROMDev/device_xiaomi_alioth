@@ -53,43 +53,33 @@ void load_dalvikvm_properties() {
     property_override("dalvik.vm.heapminfree", "8m");
 }
 
-void load_redmi_k40() {
-    property_override("ro.boot.product.hardware.sku", "nfc");
-    property_override("ro.product.model", "M2012K11AC");
-    property_override("ro.product.brand", "Redmi");
-    property_override("ro.product.vendor.marketname", "Redmi K40");
-    property_override("ro.product.vendor.manufacturer", "Xiaomi");
-    property_override("ro.product.vendor.brand", "Redmi");
-    property_override("ro.product.vendor.model", "M2012K11AC");
-}
+void load_variant_info(bool hasNfc, char const brandName[], char const marketName[], char const modelName[]) {
+    if(hasNfc) {
+        property_override("ro.boot.product.hardware.sku", "nfc");
+    }
+    property_override("ro.product.brand", brandName);
+    property_override("ro.product.odm.brand", brandName);
+    property_override("ro.product.vendor.brand", brandName);
 
-void load_poco_f3() {
-    property_override("ro.boot.product.hardware.sku", "nfc");
-    property_override("ro.product.model", "M2012K11AG");
-    property_override("ro.product.brand", "POCO");
-    property_override("ro.product.vendor.marketname", "POCO F3");
-    property_override("ro.product.vendor.manufacturer", "Xiaomi");
-    property_override("ro.product.vendor.brand", "POCO");
-    property_override("ro.product.vendor.model", "M2012K11AG");
-}
+    property_override("ro.product.marketname", marketName);
+    property_override("ro.product.odm.marketname", marketName);
+    property_override("ro.product.vendor.marketname", marketName);
 
-void load_xiaomi_mi11x() {
-    property_override("ro.product.model", "M2012K11AI");
-    property_override("ro.product.brand", "Mi");
-    property_override("ro.product.vendor.marketname", "Mi 11X");
+    property_override("ro.product.model", modelName);
+    property_override("ro.product.odm.model", modelName);
+    property_override("ro.product.vendor.model", modelName);
+
     property_override("ro.product.vendor.manufacturer", "Xiaomi");
-    property_override("ro.product.vendor.brand", "Mi");
-    property_override("ro.product.vendor.model", "M2012K11AI");
 }
 
 void vendor_load_properties() {
     std::string region = GetProperty("ro.boot.hwc", "");
     if (region.find("CN") != std::string::npos) {
-        load_redmi_k40();
+        load_variant_info(true, "Redmi", "Redmi K40", "M2012K11AC");
     } else if (region.find("INDIA") != std::string::npos) {
-        load_xiaomi_mi11x();
+        load_variant_info(false, "Mi", "Mi 11X", "M2012K11AI");
     } else {
-        load_poco_f3();
+        load_variant_info(true, "POCO", "POCO F3", "M2012K11AG");
     }
 
     load_dalvikvm_properties();
