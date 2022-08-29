@@ -34,6 +34,10 @@ ro.lmk.kill_timeout_ms=15
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
+# MiPush
+ro.miui.ui.version.code=13
+ro.miui.ui.version.name=V130
+
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
