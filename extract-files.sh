@@ -68,6 +68,9 @@ function blob_fixup() {
         vendor/lib/libsample7.so)
             "${PATCHELF}" --set-soname "libsample7.so" "${2}"
             ;;
+        vendor/lib64/camera/components/com.mi.node.watermark.so)
+            "${PATCHELF}" --add-needed "libwatermark_shim.so" "${2}"
+            ;;
     esac
 }
 
