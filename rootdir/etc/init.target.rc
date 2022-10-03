@@ -322,8 +322,8 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 on property:vendor.dcvs.prop=1
    start dcvs-sh
 
-#####copy megvii files#####
 on property:sys.boot_completed=1
+    # Copy megvii files
     mkdir /data/vendor/camera/model 0777 cameraserver audio
     mkdir /data/vendor/camera/model/rt_model 0777 cameraserver audio
     copy /vendor/etc/camera/model/rt_model/preview_model /data/vendor/camera/model/rt_model/preview_model
@@ -345,3 +345,8 @@ on property:sys.boot_completed=1
     copy /vendor/etc/camera/model/dof_model/capture_policy /data/vendor/camera/model/dof_model/capture_policy
     chown cameraserver audio  /data/vendor/camera/model/dof_model/capture_policy
     chmod 0777 /data/vendor/camera/model/dof_model/capture_policy
+
+    # Read only one page at a time
+    write /proc/sys/vm/page-cluster 0
+    # Mount swap partitions specified in fstab
+    swapon_all /vendor/etc/fstab.qcom
