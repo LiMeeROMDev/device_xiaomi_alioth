@@ -240,10 +240,10 @@
          config_mainBuiltInDisplayCutout
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
-        M -18 0
-        H 18
+        M -10 0
+        H 10
         V 36
-        H -18
+        H -10
         Z
         @dp
     </string>
