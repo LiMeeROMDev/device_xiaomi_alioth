@@ -31,9 +31,6 @@
          -->
     <dimen name="status_bar_height_landscape">@dimen/status_bar_height_default</dimen>
 
-    <!-- for 20dp of padding at 3.5px/dp at default density -->
-    <dimen name="rounded_corner_content_padding">52px</dimen>
-
     <!-- Radius of the software rounded corners. -->
     <dimen name="rounded_corner_radius">101px</dimen>
 </resources>
