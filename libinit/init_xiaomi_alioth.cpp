@@ -49,6 +49,9 @@ void load_variant_info(bool hasNfc, char const brandName[], char const marketNam
     property_override("ro.product.vendor.model", modelName);
 
     property_override("ro.product.vendor.manufacturer", "Xiaomi");
+
+    property_override("vendor.usb.product_string", marketName);
+    property_override("bluetooth.device.default_name", marketName);
 }
 
 void vendor_load_properties() {
