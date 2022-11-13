@@ -125,6 +125,9 @@
     <!-- Indicate the driver support NL80211_REG_CHANGED event. -->
     <bool translatable="false" name="config_wifiDriverSupportedNl80211RegChangedEvent">true</bool>
 
+    <!-- Indicate the device support request channel on Wi-Fi Aware data-path. -->
+    <bool translatable="false" name="config_wifiSupportChannelOnDataPath">true</bool>
+
      <!-- Indicates that 11ax mode is supported on this device
           Note that if this flag is set to true, then 11ax is assumed to be supported.
           However, if it is left to the default value of false, the 11ax support will
