@@ -95,10 +95,11 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 an
 BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=qcom
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_PAGESIZE := 4096
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_CONFIG := vendor/alioth_defconfig
+TARGET_KERNEL_CONFIG := alioth_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
 
 # OTA assert
