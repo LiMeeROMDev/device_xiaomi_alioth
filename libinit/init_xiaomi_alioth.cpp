@@ -39,7 +39,7 @@ static const variant_info_t alioth_info = {
 
     .brand = "Redmi",
     .device = "alioth",
-    .marketname = "K40",
+    .marketname = "Redmi K40",
     .model = "M2012K11AC",
 
     .nfc = true,
